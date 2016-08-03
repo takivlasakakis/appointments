@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :users
-
-  resources :appointments
-
   resources :reviews
 
-  get 'welcome/index'
-  root 'welcome#index'
+  resources :users do
+      resources :appointments
+  end
+
+  root 'user#index'
+
 end
