@@ -5,6 +5,5 @@ class User < ActiveRecord::Base
   has_many :reviews, foreign_key: "subject_id"
 
   has_secure_password
-	USER_LIST =[Student, Mentor, Administrator]
 
 end
