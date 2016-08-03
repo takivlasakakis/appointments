@@ -3,6 +3,5 @@ class Review < ActiveRecord::Base
   belongs_to :subject, class_name: "User", foreign_key: "subject_id"
   belongs_to :appointment, foreign_key: "appointment_id"
 
-  validates :author_id, :subject_id, :appointmnet_id, presence: true 
-
+  validates :author_id, :subject_id, :appointment_id, presence: true 
 end
