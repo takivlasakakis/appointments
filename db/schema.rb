@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160803204828) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.string   "type"
+    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
