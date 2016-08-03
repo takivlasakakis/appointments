@@ -3,4 +3,8 @@ class User < ActiveRecord::Base
   has_many :appointments, primary_key: :mentor_id
   has_many :reviews, primary_key: :author_id
   has_many :reviews, primary_key: :subject_id
+  
+  has_secure_password
+	USER_LIST =[Student, Mentor, Administrator]
+
 end
