@@ -1,7 +1,7 @@
 <p><strong>Username:</strong><%= @user.username %></p>
 <p><strong>Role:</strong><%= @user.role %></p>
 
-<% if @user.role = "student" %>
+<% if current_user.role == "student" %>
   <div class="calender">
     <!-- render partial '_calender' -->
     <!-- calender goes here with student's booked appointments -->
@@ -18,9 +18,14 @@
   </div>
   <div class="book_new_appointment">
     <!-- button/link to calender populated with open appointments-  :"/appointments" -->
-  <a href="/appointments">Book a new appointment</a>
+  <a href="/appointments">Find a new appointment</a>
   </div>
-<% elsif @user.role = "mentor" %>
+<% elsif current_user.role == "Mentor" %>
+
+  <form method="get" action="/appointments/new">
+    <button type="submit">Make a new appointment</button>
+  </form>
+
   <div class="new_appointment">
     <!-- make a new appointment here -->
   </div>
@@ -33,7 +38,7 @@
   <div class="book_new_appointment">
     <!-- button/link to calender populated with open appointments-  :"/appointments" -->
   </div>
-<% elsif @user.role = "admin" %>
+<% elsif current_user.role == "admin" %>
   <div class="list_all_users">
 
   </div>

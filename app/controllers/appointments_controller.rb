@@ -4,10 +4,7 @@ class AppointmentsController < ApplicationController
     @mentors = User.where(role: "mentor")
     @students = User.where(role: "student")
     @open_appointments = Appointment.where(student_id: nil)
-    p "$" * 150
-    p session[:user_id]
-    p current_user
-    p "*" * 150
+    
   end
 
   def new
@@ -15,7 +12,7 @@ class AppointmentsController < ApplicationController
     @user = session[:user_id]
     @role = User.find(@user).role
 
-    #If user is a student, will not let them create time slot 
+    #If user is a student, will not let them create time slot
     if @role == "Student"
       redirect_to '/student'
     end
