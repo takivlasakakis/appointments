@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-# resource :users 
+# resource :users
 # resource :appointments
 # resource :sessions
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 	get '/users/new' => 'users#new'
 	post '/users' => 'users#create'
 	get '/users/:id' => 'users#show'
-
+	get '/appointments' => 'appointments#index'
 
 	get '/sessions/new' => 'sessions#new'
 	get '/sessions/show' => 'sessions#show'
