@@ -4,4 +4,7 @@ class Review < ActiveRecord::Base
   belongs_to :appointment, foreign_key: "appointment_id"
 
   validates :author_id, :subject_id, :appointment_id, presence: true 
+
+  ratyrate_rateable "stars", "appointment_id", "author_id", "subject_id"
+
 end
