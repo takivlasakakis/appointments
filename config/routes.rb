@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	#Homepage
+
 	root 'users#index'
 	#User routes
   get '/signup' => 'users#new'
