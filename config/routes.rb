@@ -15,5 +15,8 @@ Rails.application.routes.draw do
 	# get '/register' => 'users#new'
 	# get '/sessions/new' => 'sessions#new'
 	# get '/sessions/delete' => 'sessions#destroy'
-
+	get '/appointments' => 'appointments#new'
+	post  '/appointments' => 'appointments#create'
+	get '/student' => 'appointments#student'
+	get '/appointments/success' => 'appointments#success'
 end

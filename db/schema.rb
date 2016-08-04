@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160803204828) do
   create_table "appointments", force: true do |t|
     t.integer  "student_id"
     t.integer  "mentor_id"
-    t.time     "appointment_time"
+    t.datetime "appointment_time"
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160803204828) do
     t.integer  "subject_id"
     t.integer  "stars"
     t.text     "body"
-    t.integer  "appointmet_id"
+    t.integer  "appointment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
