@@ -9,7 +9,7 @@
       session[:user_id] = user.id
       redirect_to '/sessions/show'
     else
-      redirect_to '/login'
+      redirect_to '/sessions/new'
     end
   end
 
@@ -18,7 +18,7 @@
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/login'
+    redirect_to '/sessions/new'
   end
 
 end
