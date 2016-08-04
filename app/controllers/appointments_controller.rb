@@ -4,6 +4,10 @@ class AppointmentsController < ApplicationController
     @mentors = User.where(role: "mentor")
     @students = User.where(role: "student")
     @open_appointments = Appointment.where(student_id: nil)
+    p "$" * 150
+    p session[:user_id]
+    p current_user
+    p "*" * 150
   end
 
   def new
