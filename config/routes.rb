@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post '/rate' => 'rater#create', :as => 'rate'
 	root 'users#index'
 	#User routes
   get '/signup' => 'users#new'
