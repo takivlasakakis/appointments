@@ -1,0 +1,23 @@
+<% if current_user[:role] = "student" %>
+
+<h1>APPointments</h1>
+<h2>Schedule an appointment with mentors here</h2>
+
+<div class="appointments">
+  <div class="appointments-list">
+    <h3>Open appointments</h3>
+    <ul>
+        <% @open_appointments.each do |app|%>
+      <li>
+        <%= app.mentor %>
+        <%= app.time %>
+        <button type="submit" name="button">Book this session</button>
+      </li>
+        <% end %>
+    </ul>
+  </div>
+</div>
+<% else current_user[:role] = "mentor" %>
+<h1>mentor appointment page</h1>
+
+<% end %>
