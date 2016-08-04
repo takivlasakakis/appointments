@@ -14,6 +14,11 @@
   end
 
   def show
+    p ">>>>>>>>>>>>>>>>>>>"
+    p @current_user
+    p current_user
+    @user = @current_user
+    @appointments = Appointment.where('student_id = ? OR mentor_id = ?', @current_user.id, @current_user.id)
   end
 
   def destroy

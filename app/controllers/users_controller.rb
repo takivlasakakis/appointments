@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-  # def profile
-  #   @user = current_user
-  #   redirect :'/users/show'
-  # end
+  def profile
+    @user = current_user
+    redirect :'/users/show'
+  end
 
   def new
   end

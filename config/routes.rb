@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 	#Sessions routes
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
-	get '/sessions/show' => 'sessions#show'
+	get '/profile' => 'sessions#show'
   post '/sessions' => 'sessions#create'
 	# get '/users/new' => 'users#new'
 	# get '/sessions/new' => 'sessions#new'
