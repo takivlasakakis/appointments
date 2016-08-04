@@ -1,26 +1,18 @@
 Rails.application.routes.draw do
-
-# resource :users 
-# resource :appointments
-# resource :sessions
-
+	#Homepage
 	root 'users#index'
-
+	#User routes
+  get '/signup' => 'users#new'
 	get '/users' => 'users#index'
-	get '/users/new' => 'users#new'
 	post '/users' => 'users#create'
 	get '/users/:id' => 'users#show'
-
-
-	get '/sessions/new' => 'sessions#new'
+	#Sessions routes
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
 	get '/sessions/show' => 'sessions#show'
-	get '/sessions/delete' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
+	# get '/users/new' => 'users#new'
+	# get '/sessions/new' => 'sessions#new'
+	# get '/sessions/delete' => 'sessions#destroy'
 
-
-
-  # get '/login' => 'sessions#new'
-  # get '/logout' => 'sessions#destroy'
-  # get '/signup' => 'users#new'
-  # post '/users' => 'users#create'
 end
