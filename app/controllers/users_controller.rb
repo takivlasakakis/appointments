@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
 
-  def index
-    @mentors = User.where(role: "mentor")
-    @students = User.where(role: "student")
-    @open_appointments = Appointment.where(student_id: nil)
-  end
+  # def profile
+  #   @user = current_user
+  #   redirect :'/users/show'
+  # end
 
   def new
   end
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :password, :email, :role)
   end
-  
+
 
 
 
