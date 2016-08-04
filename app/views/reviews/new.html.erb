@@ -1,1 +1,7 @@
-new.html.erb
+<h1>New reviews page</h1>
+
+<%= form_tag("/reviews/show", method: "post") do %>
+<%= text_field_tag(:review) %>
+<%= label_tag(:review, "Text input for review") %>
+<%= submit_tag("Submit Your Review") %>
+<% end %>
