@@ -7,13 +7,10 @@
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to '/sessions/show'
+      redirect_to '/profile'
     else
       redirect_to '/login'
     end
-  end
-
-  def show
   end
 
   def destroy
