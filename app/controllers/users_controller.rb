@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
 
-  def profile
-    @user = current_user
-    redirect :'/users/show'
-  end
-
   def new
   end
 
@@ -22,15 +17,13 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(session[:user_id])
+    @appointments = Appointment.where("mentor_id = ? OR student_id = ?", @user.id, @user.id)
   end
 
   private
   def user_params
     params.require(:user).permit(:username, :password, :email, :role)
   end
-
-
-
 
 end

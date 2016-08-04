@@ -1,7 +1,7 @@
 <p><strong>Username:</strong><%= @user.username %></p>
 <p><strong>Role:</strong><%= @user.role %></p>
 
-<% if current_user.role == "student" %>
+<% if @user.role = "student" %>
   <div class="calender">
     <!-- render partial '_calender' -->
     <!-- calender goes here with student's booked appointments -->
@@ -10,9 +10,9 @@
     </p>
   </div>
   <div class="past_appointments_list">
-    <%= render :partial => "_past_appointments_list.html.erb" %>
     <p>
-      past appoitnments
+      past appointments
+      <%= render :partial => "past_appointments_list.html.erb" %>
     </p>
     <!-- list of all past appointments without reviews -->
   </div>
@@ -22,7 +22,7 @@
       book new appointments
     </p>
   </div>
-<% elsif current_user.role == "mentor" %>
+<% elsif @user.role = "mentor" %>
   <div class="new_appointment">
     <!-- make a new appointment here -->
   </div>
@@ -35,7 +35,7 @@
   <div class="book_new_appointment">
     <!-- button/link to calender populated with open appointments-  :"/appointments" -->
   </div>
-<% elsif current_user.role == "admin" %>
+<% elsif @user.role = "admin" %>
   <div class="list_all_users">
 
   </div>
@@ -45,4 +45,6 @@
   <div class="list_all_reviews">
 
   </div>
+  <% else %>
+  something strange is happening
 <% end %>

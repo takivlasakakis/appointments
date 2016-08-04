@@ -1,4 +1,7 @@
 <ul id="past_appointments">
+  <p>
+    test text: patial is rendering
+  </p>
   <% @appointments.where('appointment_time <= ?', Time.now).each do |appointment|%>
     <li>
       <h3 class="appointment_label">Mentor:</h3>
