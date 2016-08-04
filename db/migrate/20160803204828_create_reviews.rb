@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.integer  :subject_id
       t.integer  :stars
       t.text     :body
-      t.integer  :appointmet_id
+      t.integer  :appointment_id
 
       t.timestamps
     end
