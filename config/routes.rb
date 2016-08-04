@@ -6,14 +6,18 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
 	get '/users' => 'users#index'
 	post '/users' => 'users#create'
-	get '/users/:id' => 'users#show'
+	get '/profile' => 'users#show'
 	#Sessions routes
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
-	get '/sessions/show' => 'sessions#show'
   post '/sessions' => 'sessions#create'
-	# get '/users/new' => 'users#new'
+
+	get '/appointments' => 'appointments#index'
+	# get '/register' => 'users#new'
 	# get '/sessions/new' => 'sessions#new'
 	# get '/sessions/delete' => 'sessions#destroy'
-
+	get '/appointments/new' => 'appointments#new'
+	post  '/appointments' => 'appointments#create'
+	get '/student' => 'appointments#student'
+	get '/appointments/success' => 'appointments#success'
 end

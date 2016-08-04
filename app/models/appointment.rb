@@ -3,6 +3,7 @@ class Appointment < ActiveRecord::Base
   belongs_to :mentor, class_name: "User", foreign_key: "mentor_id"
   has_many :reviews
 
-  validates :username, :email, :password_digest, :role, presence: true
+   validates :username, :email, :password_digest, :role, presence: true
+
 
 end
