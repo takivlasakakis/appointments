@@ -3,9 +3,11 @@
 
 <% if current_user.role == "student" %>
   <div class="calender">
+    <!-- render partial '_calender' -->
     <!-- calender goes here with student's booked appointments -->
   </div>
   <div class="past_appointments_list">
+    
     <!-- list of all past appointments without reviews -->
   </div>
   <div class="book_new_appointment">

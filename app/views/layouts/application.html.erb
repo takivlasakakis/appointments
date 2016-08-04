@@ -10,9 +10,9 @@
 
 # added these lines.
 <% if current_user %>
-  Signed in as <%= current_user.username %> | <%= link_to "Logout", '/sessions/delete' %>
+  Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
 <% else %>
-  <%= link_to 'Login', '/sessions/new' %> | <%= link_to 'Signup', '/users/new' %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
 
 <%= yield %>
