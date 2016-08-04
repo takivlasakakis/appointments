@@ -1,9 +1,9 @@
-<% if current_user[:role] = "student" %>
+<% if current_user.role == "student" %>
 
 <h1>APPointments</h1>
 <h2>Schedule an appointment with mentors here</h2>
 
-<div class="appointments">
+<div class="calender_w_open_appointments">
   <div class="appointments-list">
     <h3>Open appointments</h3>
     <ul>
@@ -17,7 +17,8 @@
     </ul>
   </div>
 </div>
-<% else current_user[:role] = "mentor" %>
+<% elsif current_user.role == "mentor" %>
 <h1>mentor appointment page</h1>
-
+<% else %>
+Kelvin!!!!
 <% end %>
