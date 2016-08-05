@@ -20,4 +20,3 @@ Appointment.create(:student_id => 1, :mentor_id => 2,:appointment_time => Time.n
 Appointment.create(:student_id => 2, :mentor_id => 1,:appointment_time => Time.now, :message => "My boy likes to party all the time")
 Review.create(:author_id => 1, :subject_id => 2, :stars => 4, :body => "This was a great session", :appointment_id => 1)
 Review.create(:author_id => 2, :subject_id => 1, :stars => 3, :body => "This was an OK session", :appointment_id => 2)
-

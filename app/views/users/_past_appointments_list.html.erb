@@ -2,16 +2,10 @@
   <p>
     test text: patial is rendering
   </p>
-  <% @appointments.where('appointment_time <= ?', Time.now).each do |appointment|%>
-    <li>
-      <h3 class="appointment_label">Mentor:</h3>
-      <%= appointment.mentor %>
-      <h3 class="appointment_label">Student_id:</h3>
-      <%= appointment.student %>
-      <h3 class="appointment_label">Time:</h3>
-      <%= appointment.appointment_time %>
-      <h3 class="appointment_label">Message:</h3>
-      <%= appointment.message %>
-    </li>
-  <% end %>
+  <% @appointments.where('appointment_time <= ?', Time.now).each do |appoint|%>
+  <li><a href="/reviews/new"><%= appoint.appointment_time %>
+    <%= appoint.mentor_id %>
+    <%= appoint.student_id %></a></li>
+    <% end %></ul><br>
 </ul>
+

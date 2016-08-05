@@ -1,7 +1,12 @@
 <h1>New reviews page</h1>
 
 <%= form_tag("/reviews", method: "post") do %>
-<%= text_field_tag(:review) %>
-<%= label_tag(:review, "Text input for review") %>
+<%= hidden_field_tag("reviews[appointment_id]", "#{@appointments.id}") %>
+<%= hidden_field_tag("review[author_id]", "#{@appointments.student_id}") %>
+<%= hidden_field_tag("review[subject_id]", "#{@appointments.mentor_id}") %>
+<%= text_field_tag("review[body]") %>
+<%= label_tag(:body, "Text input for review") %>
+<%= number_field_tag("review[stars]") %>
+<%= label_tag(:stars, "Text input for stars") %>
 <%= submit_tag("Submit Your Review") %>
 <% end %>

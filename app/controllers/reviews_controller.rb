@@ -1,10 +1,15 @@
 class ReviewsController < ApplicationController
 
 	def new
+		@appointments = Appointment.find(1)
 	  @review = Review.new
 	end
 
 	def create
+		p "%" * 100
+		p user_params
+		p "%" * 100
+
 	  @review = Review.new(user_params)
 		@review.author_id = current_user.id
 		redirect_to reviews_path
@@ -16,6 +21,6 @@ class ReviewsController < ApplicationController
 
 	private
 	def user_params
-		params.require(:reviews).permit(:author_id, :subject_id, :stars, :body, :appointment_id)
+		params.require(:review).permit(:author_id, :subject_id, :stars, :body, :appointment_id)
 	end
 end
