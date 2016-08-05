@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   validates :username, :email, uniqueness: true
   has_secure_password
 
+  before_save do
+    self.role = self.role.downcase
+    self.email = self.email.downcase
+  end
 end
