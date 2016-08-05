@@ -16,6 +16,11 @@ class ReviewsController < ApplicationController
 	  @review = Review.find_by(params[:author_id])
 	end
 
+	def index
+		@review = Review.where(subject_id:current_user.id)
+		@review_for_me = Review.where(author_id:current_user.id) 
+	end
+
 	private
 	def user_params
 		params.require(:review).permit(:author_id, :subject_id, :stars, :body, :appointment_id)
