@@ -5,8 +5,8 @@
 <%= hidden_field_tag("review[author_id]", "#{@appointments.student_id}") %>
 <%= hidden_field_tag("review[subject_id]", "#{@appointments.mentor_id}") %>
 <%= text_field_tag("review[body]") %>
-<%= label_tag(:body, "Text input for review") %>
+<%= label_tag(:body, "Text input for review") %> <br>
 <%= number_field_tag("review[stars]") %>
-<%= label_tag(:stars, "Text input for stars") %>
+<%= label_tag(:stars, "Number of Stars") %> <br>
 <%= submit_tag("Submit Your Review") %>
 <% end %>
