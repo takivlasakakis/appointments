@@ -14,8 +14,8 @@
 # one appointment
 
 
-User.create(:username => "Donny Trump", :password_digest => "trump2016", :email => "trump2016@trump.com",:role => "Student")
-User.create(:username => "Hillary", :password_digest => "hillary2016", :email => "hillary2016@hillary.com",:role => "Mentor")
+User.create(:username => "Donny Trump", :password_digest => "trump2016", :email => "trump2016@trump.com",:role => "student")
+User.create(:username => "Hillary", :password_digest => "hillary2016", :email => "hillary2016@hillary.com",:role => "mentor")
 Appointment.create(:student_id => 1, :mentor_id => 2,:appointment_time => "2016-08-03 18:00:00", :message => "My girl likes to party all the time")
 Appointment.create(:student_id => 2, :mentor_id => 1,:appointment_time => "2016-08-03 15:00:00", :message => "My boy likes to party all the time")
 Review.create(:author_id => 1, :subject_id => 2, :stars => 4, :body => "This was a great session", :appointment_id => 1)
