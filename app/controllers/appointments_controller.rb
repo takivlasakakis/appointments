@@ -37,6 +37,22 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    @user = session[:user_id]
+  end
+
+  def edit
+    @appointment = Appointment.find(params[:id])
+    @user = session[:user_id]
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+
+    if @appointment.update(appt_mentor_params)
+      redirect_to '/appointments/'
+    else
+      render 'edit'
+    end
   end
 
   private

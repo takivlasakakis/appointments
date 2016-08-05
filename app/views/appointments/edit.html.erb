@@ -6,11 +6,10 @@
 </ul>
 
 
-<%= form_for @appointment, method: :patch do |f| %>
+<%= form_for @appointment do |f| %>
 
 Enter Details:<br> <%= f.text_area :message, size: "30x6" %>
 <br>
-<%= f.hidden_field :appointment_id, :value => @appointment.id %>
 <%= f.hidden_field :student_id, :value => @user %>
 <%= f.submit "Register for Session" %>
 <% end %>
