@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   def index
     @mentors = User.where(role: "mentor")
     @students = User.where(role: "student")
-    @open_appointments = Appointment.where(student_id: nil)
+    @open_appointments = Appointment.where(student_id: current_user.id)
   end
 
   def new
