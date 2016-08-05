@@ -65,6 +65,7 @@
 <% elsif current_user.role == "admin" %>
 
 <div class="list_all_users">
+<h3>All registered users</h3>
 <table>
   <tr>
     <th>User</th>
@@ -84,10 +85,44 @@
 </div>
 
 <div class="list_all_appointments">
+<h3>All Appointments</h3>
+<table>
+  <tr>
+    <th>Student</th>
+    <th>Mentor</th>
+    <th>Time</th>
+  </tr>
 
+  <% @all_appointments.each do |appt| %>
+    <tr>
+      <td><%= appt.student_id %></td>
+      <td><%= appt.mentor_id %></td>
+      <td><%= appt.appointment_time %></td>
+    </tr>
+  <% end %>
+</table>
 </div>
 <div class="list_all_reviews">
+<h3>All Reviews</h3>
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Subject</th>
+    <th>Stars</th>
+    <th>Body</th>
+    <th>Appointment ID</th>
+  </tr>
 
+  <% @reviews.each do |rev| %>
+    <tr>
+      <td><%= rev.author_id %></td>
+      <td><%= rev.subject_id %></td>
+      <td><%= rev.stars %></td>
+      <td><%= rev.body %></td>
+      <td><%= rev.appointment_id %></td>
+    </tr>
+  <% end %>
+</table>
 </div>
 <% else %>
 something strange is happening
