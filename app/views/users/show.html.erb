@@ -18,9 +18,7 @@
     <!-- button/link to calender populated with open appointments-  :"/appointments" -->
   <a href="/appointments">Find a new appointment</a>
   </div>
-<% elsif current_user.role == "entor" %>
-
-
+<% elsif current_user.role == "Mentor" %>
   <div class="new_appointment">
 
     <form method="get" action="/appointments/new">
