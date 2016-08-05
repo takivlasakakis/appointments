@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 resources :appointments
 	root 'users#index'
 	#User routes
-  get '/signup' => 'users#new'
+  get '/signup' => 'users#new'  
 	get '/users' => 'users#index'
 	post '/users' => 'users#create'
+	resources :user, only: [:destroy]
+	# delete '/users/:id' => 'users#destroy'
 	get '/profile' => 'users#show'
+
 	#Sessions routes
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
