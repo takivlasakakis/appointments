@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-  def index 
+  def index
     @appointments = Appointment.all
     p "****"
     p @appointments
-  end 
+  end
 
   def new
   end
@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
   	if @user.save
-    	redirect_to '/login'
+      session[:user_id] = @user.id
+    	redirect_to '/profile'
   	else
     	render 'new'
   	end
