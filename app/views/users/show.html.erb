@@ -4,10 +4,11 @@
 
 <% if current_user.role == "Student" %>
 <div class="calender">
-  <!-- render partial '_calender' -->
   <!-- calender goes here with student's booked appointments -->
+  Calender of students future appointments
   <p>
     calender div
+    <%= render :partial => "/appointments/calendar.html.erb" %>
   </p>
 </div>
 <div class="past_appointments_list">
