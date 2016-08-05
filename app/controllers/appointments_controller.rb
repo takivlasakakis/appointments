@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   def index
     @mentors = User.where(role: "mentor")
     @students = User.where(role: "student")
-    @open_appointments = Appointment.where(student_id: current_user.id)
+    @open_appointments = Appointment.where(student_id: nil)
   end
 
   def new
@@ -21,18 +21,10 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appt_mentor_params)
     if @appointment.save
-      redirect_to '/appointments/success'
+      redirect_to "/appointments/#{@appointment.id}"
     else
       render 'new'
     end
-  end
-
-  def success
-    @appointment = Appointment.last
-    @mentor_id = @appointment.mentor_id
-    @mentor = User.find(@mentor_id).username
-    @student_id = @appointment.student_id
-
   end
 
   def show
