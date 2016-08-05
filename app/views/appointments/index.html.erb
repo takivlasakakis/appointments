@@ -7,7 +7,7 @@
   <div class="appointments-list">
     <h3>Open appointments</h3>
     <ul>
-      <% @open_appointments.each do |app|%>
+      <% @appointments.each do |app|%>
       <li>
        Date: <%= (app.appointment_time).strftime("%m/%d/%Y") %><br>
        Time: <%= (app.appointment_time).strftime("%I:%M%p") %><br>
