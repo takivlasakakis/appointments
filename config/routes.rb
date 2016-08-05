@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 	post  '/appointments' => 'appointments#create'
 	get '/student' => 'appointments#student'
 	get '/appointments/success' => 'appointments#success'
+	get '/appointments/:id' => 'appointments#show'
 end

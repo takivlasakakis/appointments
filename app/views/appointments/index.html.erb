@@ -1,4 +1,4 @@
-<% if current_user.role == "student" %>
+<% if current_user.role == "Student" %>
 
 <h1>APPointments</h1>
 <h2>Schedule an appointment with mentors here</h2>
@@ -9,15 +9,17 @@
     <ul>
         <% @open_appointments.each do |app|%>
       <li>
-        <%= app.mentor %>
-        <%= app.time %>
-        <button type="submit" name="button">Book this session</button>
-      </li>
+         Date:<%= (app.appointment_time).strftime("%m/%d/%Y") %><br>
+         Time:<%= (app.appointment_time).strftime("%I:%M%p") %><br>
+         Mentor: <%= User.find(app.mentor_id).username %><br>
+        <a href="/appointments/<%= app.id%>">
+        <button>Book this session</button> </a>
+      </li><br>
         <% end %>
     </ul>
   </div>
 </div>
-<% elsif current_user.role == "mentor" %>
+<% elsif current_user.role == "Mentor" %>
 <h1>mentor appointment page</h1>
 <% else %>
 Kelvin!!!!
