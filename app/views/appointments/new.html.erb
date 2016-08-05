@@ -1,0 +1,12 @@
+<h1>Appointment Creation </h1>
+<!-- Appt creator for mentor -->
+
+<%= form_for :appointment, :html => { :class => "form-group"}, url: '/appointments'  do |f| %>
+
+	<%= f.hidden_field :mentor_id, :value => @user %>
+	
+  Date Slot: <%= f.datetime_select :appointment_time, :ampm => true, :start_year => 2016, :order => [:month, :day, :year]%>
+
+  <%= f.submit "Submit" %>
+
+<% end %>

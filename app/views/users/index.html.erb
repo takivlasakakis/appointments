@@ -1,0 +1,19 @@
+hello world 
+
+<%= month_calendar(attribute: :start_time) do |date| %>
+  <%= date %>
+<% end %>
+
+
+<%= month_calendar events: @appointments do |date, meetings| %>
+  <%= date %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.name %>
+    </div>
+  <% end %>
+<% end %>
+
+
+

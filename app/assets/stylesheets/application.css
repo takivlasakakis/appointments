@@ -12,4 +12,69 @@
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
+
  */
+
+.calendar {
+	border: solid;
+	border-width: 1px;
+	padding: 7px;
+	background-color: #b3c2bf;
+}
+
+.day{
+    padding: 0px !important;
+
+}
+
+.simple-calendar {
+	border: none;	
+	background-color: white;
+
+}
+.calendar-heading {
+	border: none;
+	background-color: white;
+}
+
+.today {
+    background: #e9ece5 !important;
+  }
+
+.next-month {
+    background-color: #c0dfd9 !important;
+  }
+
+.prev-month {
+    background: #c0dfd9 !important;
+  }
+.layout-header {
+  margin: auto;
+  width: 20%;
+}
+.appt-form-button {
+  margin: auto;
+  width: 20%;
+}
+
+.new-form {
+  margin: auto;
+  width: 20%;
+}
+.mentor-on-calendar{
+  margin-top: 5px;
+}
+.student-sign-up {
+  margin: auto;
+  width: 20%;
+
+}
+.student-message {
+  border-radius: 8px;
+}
+
+.btn-warning {
+    margin-left: 40px;
+}
+

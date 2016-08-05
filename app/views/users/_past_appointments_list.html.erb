@@ -1,0 +1,9 @@
+<ul id="past_appointments">
+
+  <% @appointments.where('appointment_time <= ?', Time.now).each do |appoint|%>
+  <li><a href="/reviews/new/appointment/<%=appoint.id %>">
+    <%= appoint.appointment_time %>,
+    <%= appoint.mentor_id %>,
+    <%= appoint.student_id %></a></li>
+    <% end %></ul><br>
+</ul>

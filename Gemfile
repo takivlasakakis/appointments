@@ -27,7 +27,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'ratyrate'
+gem 'pry'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -38,3 +40,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# gem for calendar 
+
+gem "simple_calendar", "~> 2.0"

@@ -1,0 +1,13 @@
+<h1>Reviews</h1> <br>
+<h3>Reviews I Wrote</h3>
+<% @review.each do |ind_rev|%>
+stars: <%= ind_rev.stars%><br>
+review details: <%= ind_rev.body%>
+<%end%><br>
+
+<h3>Reviews About Me</h3>
+
+<% @review_for_me.each do |ind_rev|%>
+stars: <%= ind_rev.stars%><br>
+review details: <%= ind_rev.body%>
+<%end%>

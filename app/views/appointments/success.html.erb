@@ -1,0 +1,15 @@
+<h1>Thanks for signing up for an appointment!</h1>
+
+<h3>Here are your details</h3>
+<ul>
+	<li>When? <%= @appointment.appointment_time %></li>
+	<li>The assigned mentor is <%= @mentor %></li>
+	<li>The assigned student is  
+
+ <% if @student_id == nil %>
+ 		<%= p "not yet determined" %>
+ <% else %>
+ 		<%= User.find(@student_id).username %>
+ <% end %> </li>
+
+</ul>
