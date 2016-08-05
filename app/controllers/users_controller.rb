@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @appointments = Appointment.where("mentor_id = ? OR student_id = ?", @user.id, @user.id)
+    @past_appointments = Appointment.where("appointment_time < ?", Time.now)
   end
 
   private
