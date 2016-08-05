@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def index 
+    @appointments = Appointment.all
+    p "****"
+    p @appointments
+  end 
+
   def new
   end
 
@@ -20,6 +26,7 @@ class UsersController < ApplicationController
   end
   
   private
+
   def user_params
     params.require(:user).permit(:username, :password, :email, :role)
   end

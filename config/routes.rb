@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-resources :users do
-    resources :appointments
-end
+  resources :appointments
 
-root 'user#index'
+get 'user/index'
+
+
+root 'users#index'
 
 end
