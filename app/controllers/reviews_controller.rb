@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def create
-	  @review = Review.new(user_params)
+	  @review = Review.create(user_params)
 		@review.author_id = current_user.id
 		redirect_to reviews_path
 	end
