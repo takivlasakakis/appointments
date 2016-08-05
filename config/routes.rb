@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
 
+
 	get '/appointments' => 'appointments#index'
 	# get '/register' => 'users#new'
 	# get '/sessions/new' => 'sessions#new'

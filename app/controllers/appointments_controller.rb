@@ -44,4 +44,5 @@ class AppointmentsController < ApplicationController
     params.require(:appointment).permit(:student_id,:mentor_id,:appointment_time,:message)
   end
 
+
 end
