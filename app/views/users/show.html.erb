@@ -47,7 +47,10 @@
 </div>
 <% elsif current_user.role == "admin" %>
 <div class="list_all_users">
-
+<ul>
+<% @users.each do |user| %>
+<li><%=user.username%></li>
+<% end %>
 </div>
 <div class="list_all_appointments">
 
