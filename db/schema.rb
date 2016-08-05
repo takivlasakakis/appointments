@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20160804211827) do
 
   create_table "appointments", force: true do |t|
     t.integer  "student_id"
-    t.integer  "mentor_id"
-    t.datetime "appointment_time"
+    t.integer  "mentor_id",        null: false
+    t.datetime "appointment_time", null: false
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -68,20 +68,20 @@ ActiveRecord::Schema.define(version: 20160804211827) do
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
 
   create_table "reviews", force: true do |t|
-    t.integer  "author_id"
-    t.integer  "subject_id"
-    t.integer  "stars"
-    t.text     "body"
-    t.integer  "appointmet_id"
+    t.integer  "author_id",      null: false
+    t.integer  "subject_id",     null: false
+    t.integer  "stars",          null: false
+    t.text     "body",           null: false
+    t.integer  "appointment_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.string   "email"
-    t.string   "role"
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.string   "email",           null: false
+    t.string   "role",            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

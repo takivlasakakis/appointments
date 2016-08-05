@@ -1,12 +1,13 @@
 class ReviewsController < ApplicationController
 
 	def new
-		@appointments = Appointment.find(1)
+
+		@appointments = Appointment.find_by(params[:id])
 	  @review = Review.new
 	end
 
 	def create
-	  @review = Review.new(user_params)
+	  @review = Review.create(user_params)
 		@review.author_id = current_user.id
 		redirect_to reviews_path
 	end
