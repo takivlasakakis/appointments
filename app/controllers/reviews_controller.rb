@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
 
+  def index
+      @review = Review.where(subject_id:current_user.id)
+      @review_for_me = Review.where(author_id:current_user.id)
+  end
+
 	def new
 
 		@appointments = Appointment.find_by(params[:id])
