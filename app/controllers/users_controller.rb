@@ -2,8 +2,6 @@ class UsersController < ApplicationController
 
   def index
     @appointments = Appointment.all
-    p "****"
-    p @appointments
   end
 
   def new
