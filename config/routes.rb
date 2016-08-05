@@ -21,7 +21,7 @@ resources :appointments
 	get '/appointments/new' => 'appointments#new'
 	post  '/appointments' => 'appointments#create'
 	get '/student' => 'appointments#student'
-	get '/appointments/success' => 'appointments#success'
+
 	get '/appointments/:id' => 'appointments#show'
 	post '/reviews' => 'reviews#new'
 	# get '/appointments/:id' => 'appointments#show'
