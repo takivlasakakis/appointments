@@ -10,3 +10,4 @@ class CreateAppointments < ActiveRecord::Migration
     end
   end
 end
+

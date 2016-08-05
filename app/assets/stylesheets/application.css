@@ -16,7 +16,7 @@
 
  */
 
-div {
+.calendar {
 	border: solid;
 	border-width: 1px;
 	padding: 7px;
@@ -49,48 +49,12 @@ div {
 .prev-month {
     background: #c0dfd9 !important;
   }
-
- /*.date{
-
- }
- tr:nth-child(even) {
-    background-color: #e1e1ea;
+.layout-header {
+  margin: auto;
+  width: 20%;
+}
+.appt-form-button {
+  margin: auto;
+  width: 20%;
 }
 
-.simple-calendar {
-	padding: 0px;
-    margin: auto;
-    width: 90%;
-    height: 600px;
-}
-.calendar-heading{
-	text-align: center;
-}
-
-
-
-.tbody{
-
-}
-
-.table-striped{
-	margin: auto;
-    width: 100%;
-}
-.wday-0 {
-}
-.wday-1 {}
-.wday-2 {}
-.wday-3 {}
-.wday-4 {}
-.wday-5 {}
-.wday-6 {}
-.today {}
-.past {}
-.future {}
-.start-date {}
-.prev-month {}
-.next-month { }
-.current-month {}
-.has-events {}
-*/
