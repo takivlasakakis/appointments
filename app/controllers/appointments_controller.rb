@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
     @role = User.find(@user).role
 
     #If user is a student, will not let them create time slot
-    if @role == "Student"
+    if @role == "student"
       redirect_to '/appointments'
     end
 
