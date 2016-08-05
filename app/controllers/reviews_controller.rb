@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
 	def new
-		@appointments = Appointment.find(1)
+		@appointments = Appointment.find(params[:id])
 	  @review = Review.new
 	end
 
