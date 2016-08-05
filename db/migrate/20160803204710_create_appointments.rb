@@ -6,7 +6,7 @@ class CreateAppointments < ActiveRecord::Migration
       t.datetime :appointment_time, null: false
       t.text     :message
 
-      t.timestamps, null: false
+      t.timestamps
     end
   end
 end

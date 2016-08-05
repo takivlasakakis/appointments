@@ -7,7 +7,7 @@ class CreateReviews < ActiveRecord::Migration
       t.text     :body, null: false
       t.integer  :appointment_id, null: false
 
-      t.timestamps, null: false
+      t.timestamps
     end
   end
 end
