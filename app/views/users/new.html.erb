@@ -2,13 +2,17 @@
 
 <h1>Signup!</h1>
 
-<%= form_for :user, url: '/users' do |f| %>
-
-  Username: <%= f.text_field :username %> <br>
-  Email: <%= f.text_field :email %> <br>
-  Password: <%= f.password_field :password %> <br>
+<%= form_for :user, :html => {:class => 'new-form'}, url: '/users' do |f| %>
+   <%= f.text_field :username,  placeholder: "Username" %> <br>
+ <%= f.text_field :email, placeholder: "Email" %> <br>
+   <%= f.password_field :password, placeholder: "Password" %> <br>
   User type: <%= f.select :role, options_for_select([["Select One", ""], "Student", "Mentor"]) %> <br>
   <!-- Removed "Administrator" -->
   <%= f.submit "Submit" %>
 
+
 <% end %>
+
+
+
+
