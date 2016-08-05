@@ -4,6 +4,7 @@ class AppointmentsController < ApplicationController
     @mentors = User.where(role: "mentor")
     @students = User.where(role: "student")
     @appointments = Appointment.where(student_id: nil)
+    @my_appointments = Appointment.where(student_id: current_user.id)
   end
 
   def new
