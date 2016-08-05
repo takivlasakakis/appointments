@@ -19,15 +19,24 @@
 <% elsif current_user.role == "Student" %>
   <div class="calender">
     <!-- calender goes here with mentor's booked appointments -->
+    My appointments
+    <ul>
+    <% @appointments.each do |appoint|%>
+    <li><a href="/appointments/<%=appoint.id%>">
+    <%= appoint.appointment_time %>
+    <%= appoint.mentor_id %>
+    <%= User.find(appoint.mentor_id).username %></a></li>
+    <% end %></ul>
   </div>
   <div class="past_appointments_list">
     <!-- list of all past appointments without reviews -->
+    My past appointments:
     <ul>
     <% @past_appointments.each do |appoint|%>
     <li><a href="/appointments/<%=appoint.id%>">
     <%= appoint.appointment_time %>
     <%= appoint.mentor_id %>
-    <%= User.find(appoint.student_id).username %></a></li>
+    <%= User.find(appoint.mentor_id).username %></a></li>
     <% end %></ul>
   </div>
   <div class="book_new_appointment">
