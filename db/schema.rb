@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20160804211827) do
     t.integer  "subject_id"
     t.integer  "stars"
     t.text     "body"
-    t.integer  "appointment_id"
+    t.integer  "appointmet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

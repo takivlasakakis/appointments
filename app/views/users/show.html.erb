@@ -23,10 +23,6 @@
 </div>
 <% elsif current_user.role == "Mentor" %>
 
-<form method="get" action="/appointments/new">
-  <button type="submit">Make a new appointment</button>
-</form>
-
 <div class="new_appointment">
   <!-- make a new appointment here -->
 </div>
@@ -37,7 +33,7 @@
   <!-- list of all past appointments without reviews -->
   <ul>
   <% @past_appointments.each do |appoint|%>
-  <li><a href="#"><%= appoint.appointment_time %>
+  <li><a href="/appointments/<%=appoint.id%>"><%= appoint.appointment_time %>
   <%= appoint.mentor_id %>
   <%= appoint.student_id %></a></li>
   <% end %></ul><br>

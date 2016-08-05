@@ -2,7 +2,7 @@
   <%= date %>
 
   <% appointments.each do |appointment| %>
-    <div>
+    <div class="calendar">
       <%= appointment.start_time.strftime("	%I:%M%p") %>
       <%= User.find_by(id: appointment.mentor_id) %>
       <a href="#">sign up!</a>
