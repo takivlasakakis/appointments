@@ -22,29 +22,6 @@
   <a href="/appointments">Find a new appointment</a>
 </div>
 <% elsif current_user.role == "Mentor" %>
-=======
-<% if current_user.role == "student" %>
-  <div class="calender">
-    <!-- render partial '_calender' -->
-    <!-- calender goes here with student's booked appointments -->
-    <p>
-      calender div
-    </p>
-    <%= render partial %>
-  </div>
-  <div class="past_appointments_list">
-    <p>
-      past appointments
-      <%= render :partial => "past_appointments_list.html.erb" %>
-    </p>
-    <!-- list of all past appointments without reviews -->
-  </div>
-  <div class="book_new_appointment">
-    <!-- button/link to calender populated with open appointments-  :"/appointments" -->
-  <a href="/appointments">Find a new appointment</a>
-  </div>
-<% elsif current_user.role == "mentor" %>
->>>>>>> 92d15d45e3f1b90c24a619ceaebf79837aec48e2
 
 <form method="get" action="/appointments/new">
   <button type="submit">Make a new appointment</button>
