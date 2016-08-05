@@ -1,19 +1,13 @@
 
-<p><strong>Username:</strong><%= @user.username %></p>
-<p><strong>Role:</strong><%= @user.role %></p>
+<p><strong>Username: </strong><%= @user.username %></p>
+<p><strong>Role: </strong><%= @user.role %></p>
 
-<% if current_user.role == "Student" %>
+<% if current_user.role == "Mentor" %>
 <div class="calender">
   <!-- calender goes here with student's booked appointments -->
-  Calender of students future appointments
-  <p>
-    calender div
-    <%= render :partial => "/appointments/calendar.html.erb" %>
-  </p>
 </div>
 <div class="past_appointments_list">
   <p>
-    past appointments
     <%= render :partial => "past_appointments_list.html.erb" %>
   </p>
   <!-- list of all past appointments without reviews -->
@@ -22,39 +16,14 @@
   <!-- button/link to calender populated with open appointments-  :"/appointments" -->
   <a href="/appointments">Find a new appointment</a>
 </div>
-<% elsif current_user.role == "Mentor" %>
+<% elsif current_user.role == "Student" %>
 
 
-
-<div class="new_appointment">
-<form method="get" action="/appointments/new">
-  <button type="submit">Make a new appointment</button>
-</form>
-</div>
 <div class="calender">
-  <h1>Upcoming Appointments Calendar</h1>
   <!-- calender goes here with mentor's booked appointments -->
 </div>
-<div class="past_appointments_list">
-  <!-- list of all past appointments without reviews -->
-  <h1>Leave Reviews on Past Appointments Here!</h1>
-  <ul>
-  <% @past_appointments.each do |appoint|%>
-  <br><li><a href="/reviews/new">Date: <%= (appoint.appointment_time).strftime("%m/%d/%Y") %></a></li>
-  Time: <%= (appoint.appointment_time).strftime("%I:%M%p")%><br>
-  Assigned Mentor: <%= User.find(appoint.mentor_id).username %><br>
-   <% if appoint.student_id == nil %>
-  Assigned Student: <%= p "N/A" %><br>
- <% else %>
-  Assigned Student: <%= User.find(appoint.mentor).username %><br>
-  Message: <%= appoint.message %>
- <% end %><br>
 
-  <% end %></ul>
-</div>
-<div class="book_new_appointment">
-  <!-- button/link to calender populated with open appointments-  :"/appointments" -->
-</div>
+
 <% elsif current_user.role == "admin" %>
 <div class="list_all_users">
 
