@@ -1,6 +1,6 @@
 <ul id="past_appointments">
   <p>
-    test text: patial is rendering
+    test text: partial is rendering
   </p>
   <% @appointments.where('appointment_time <= ?', Time.now).each do |appointment|%>
     <li>
@@ -12,6 +12,7 @@
       <%= appointment.appointment_time %>
       <h3 class="appointment_label">Message:</h3>
       <%= appointment.message %>
+      
     </li>
   <% end %>
 </ul>

@@ -1,4 +1,4 @@
-<% if current_user.role == "student" %>
+<% if current_user.role == "Student" %>
 
 <h1>APPointments</h1>
 <h2>Schedule an appointment with mentors here</h2>
@@ -17,8 +17,8 @@
     </ul>
   </div>
 </div>
-<% elsif current_user.role == "mentor" %>
+<% elsif current_user.role == "Mentor" %>
 <h1>mentor appointment page</h1>
 <% else %>
-Kelvin!!!!
+
 <% end %>
