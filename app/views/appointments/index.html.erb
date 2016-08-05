@@ -9,10 +9,12 @@
     <ul>
         <% @open_appointments.each do |app|%>
       <li>
-        <%= app.mentor %>
-        <%= app.time %>
-        <button type="submit" name="button">Book this session</button>
-      </li>
+         Date:<%= (app.appointment_time).strftime("%m/%d/%Y") %><br>
+         Time:<%= (app.appointment_time).strftime("%I:%M%p") %><br>
+         Mentor: <%= User.find(app.mentor_id).username %><br>
+        <a href="/appointments/<%= app.id%>">
+        <button>Book this session</button> </a>
+      </li><br>
         <% end %>
     </ul>
   </div>
