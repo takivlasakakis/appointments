@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
 	def new
 
-		@appointments = Appointment.find_by(params[:id])
+	@appointments = Appointment.find_by(params[:id])
 	  @review = Review.new
 	end
 
@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def show
-	  @review = Review.find(params[:id])
+	  @review = Review.find_by(params[:author_id])
 	end
 
 	private

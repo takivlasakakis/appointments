@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'ratyrate'
 gem 'pry'
+gem 'jquery-star-rating-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

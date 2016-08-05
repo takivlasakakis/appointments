@@ -1,15 +1,5 @@
 <h1>Reviews show page</h1><br>
 
-<div class="row">
-  <div class="small-2 large-2 columns">
-    <%= imdb_style_rating_for @review, current_user%>
-  </div>
-  <br>
-  <div class="small-2 large-4 columns">
-    <% if current_user %>
-      Review for the study session: <%= rating_for @review, "The Study Session" %>
-      <br>
-
-    <% end %>
-  </div>
-</div>
+<% @review do |indiv_review| %>
+<%= indiv_review.author_id %>
+<% end %>
