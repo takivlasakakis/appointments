@@ -1,11 +1,11 @@
 <ul id="past_appointments">
   <p>
-    test text: patial is rendering
+    test text: partial is rendering
   </p>
+
   <% @appointments.where('appointment_time <= ?', Time.now).each do |appoint|%>
   <li><a href="/reviews/new"><%= appoint.appointment_time %>
     <%= appoint.mentor_id %>
     <%= appoint.student_id %></a></li>
     <% end %></ul><br>
 </ul>
-
