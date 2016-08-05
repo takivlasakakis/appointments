@@ -3,7 +3,6 @@
 <h1>Signup!</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
-
   Username: <%= f.text_field :username %> <br>
   Email: <%= f.text_field :email %> <br>
   Password: <%= f.password_field :password %> <br>
@@ -11,4 +10,6 @@
   <!-- Removed "Administrator" -->
   <%= f.submit "Submit" %>
 
+
 <% end %>
+
