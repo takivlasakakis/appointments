@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+resources :appointments
 	root 'users#index'
 	#User routes
   get '/signup' => 'users#new'
@@ -19,5 +19,10 @@ Rails.application.routes.draw do
 	post  '/appointments' => 'appointments#create'
 	get '/student' => 'appointments#student'
 	get '/appointments/success' => 'appointments#success'
-	get '/appointments/:id' => 'appointments#show'
+	# get '/appointments/:id' => 'appointments#show'
+	put '/appointments/:id' => 'appointments#edit'
+	get '/appointments/:id/edit' => 'appointments#edit'
+	# post '/appointments/:id/edit' => 'appointments#edit'
+
+	
 end
