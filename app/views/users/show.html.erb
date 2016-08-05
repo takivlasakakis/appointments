@@ -1,9 +1,53 @@
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
- 
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
+<p><strong>Username:</strong><%= @user.username %></p>
+<p><strong>Role:</strong><%= @user.role %></p>
+
+<% if current_user.role == "student" %>
+  <div class="calender">
+    <!-- render partial '_calender' -->
+    <!-- calender goes here with student's booked appointments -->
+    <p>
+      calender div
+    </p>
+  </div>
+  <div class="past_appointments_list">
+    <p>
+      past appointments
+      <%= render :partial => "past_appointments_list.html.erb" %>
+    </p>
+    <!-- list of all past appointments without reviews -->
+  </div>
+  <div class="book_new_appointment">
+    <!-- button/link to calender populated with open appointments-  :"/appointments" -->
+  <a href="/appointments">Find a new appointment</a>
+  </div>
+<% elsif current_user.role == "Mentor" %>
+
+  <form method="get" action="/appointments/new">
+    <button type="submit">Make a new appointment</button>
+  </form>
+
+  <div class="new_appointment">
+    <!-- make a new appointment here -->
+  </div>
+  <div class="calender">
+    <!-- calender goes here with mentor's booked appointments -->
+  </div>
+  <div class="past_appointments_list">
+    <!-- list of all past appointments without reviews -->
+  </div>
+  <div class="book_new_appointment">
+    <!-- button/link to calender populated with open appointments-  :"/appointments" -->
+  </div>
+<% elsif current_user.role == "admin" %>
+  <div class="list_all_users">
+
+  </div>
+  <div class="list_all_appointments">
+
+  </div>
+  <div class="list_all_reviews">
+
+  </div>
+  <% else %>
+  something strange is happening
+<% end %>
