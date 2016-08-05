@@ -6,10 +6,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def create
-		p "%" * 100
-		p user_params
-		p "%" * 100
-
+<<<<<<< HEAD
 	  @review = Review.new(user_params)
 		@review.author_id = current_user.id
 		redirect_to reviews_path
@@ -23,4 +20,7 @@ class ReviewsController < ApplicationController
 	def user_params
 		params.require(:review).permit(:author_id, :subject_id, :stars, :body, :appointment_id)
 	end
+=======
+
+>>>>>>> 92d15d45e3f1b90c24a619ceaebf79837aec48e2
 end

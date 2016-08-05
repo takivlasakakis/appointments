@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   def index
     @mentors = User.where(role: "mentor")
     @students = User.where(role: "student")
-    @open_appointments = Appointment.where(student_id: nil)
+    @open_appointments = Appointment.where(student_id: current_user.id)
   end
 
   def new
@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
     @role = User.find(@user).role
 
     #If user is a student, will not let them create time slot
-    if @role == "Student"
+    if @role == "student"
       redirect_to '/appointments'
     end
 
@@ -37,11 +37,28 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    @user = session[:user_id]
+  end
+
+  def edit
+    @appointment = Appointment.find(params[:id])
+    @user = session[:user_id]
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+
+    if @appointment.update(appt_mentor_params)
+      redirect_to '/appointments/'
+    else
+      render 'edit'
+    end
   end
 
   private
   def appt_mentor_params
     params.require(:appointment).permit(:student_id,:mentor_id,:appointment_time,:message)
   end
+
 
 end

@@ -4,5 +4,8 @@ class Appointment < ActiveRecord::Base
   has_many :reviews
 
 
+def start_time
+  self.appointment_time
+end
 
 end

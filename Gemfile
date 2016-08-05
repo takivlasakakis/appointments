@@ -40,3 +40,6 @@ gem 'pry'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# gem for calendar 
+
+gem "simple_calendar", "~> 2.0"

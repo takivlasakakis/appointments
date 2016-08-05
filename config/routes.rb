@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 	resources :reviews
   post '/rate' => 'rater#create', :as => 'rate'
+resources :appointments
 	root 'users#index'
 	#User routes
   get '/signup' => 'users#new'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
 
+
 	get '/appointments' => 'appointments#index'
 	# get '/register' => 'users#new'
 	# get '/sessions/new' => 'sessions#new'
@@ -22,4 +24,10 @@ Rails.application.routes.draw do
 	get '/appointments/success' => 'appointments#success'
 	get '/appointments/:id' => 'appointments#show'
 	post '/reviews' => 'reviews#new'
+	# get '/appointments/:id' => 'appointments#show'
+	put '/appointments/:id' => 'appointments#edit'
+	get '/appointments/:id/edit' => 'appointments#edit'
+	# post '/appointments/:id/edit' => 'appointments#edit'
+
+	
 end

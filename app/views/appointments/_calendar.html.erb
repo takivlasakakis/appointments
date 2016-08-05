@@ -1,0 +1,11 @@
+<%= month_calendar events: @open_appointments do |date, appointments| %>
+  <%= date %>
+
+  <% appointments.each do |appointment| %>
+    <div>
+      <%= appointment.start_time.strftime("	%I:%M%p") %>
+      <%= User.find_by(id: appointment.mentor_id) %>
+      <a href="#">sign up!</a>
+    </div>
+  <% end %>
+<% end %>
