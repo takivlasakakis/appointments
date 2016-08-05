@@ -21,7 +21,7 @@
     <!-- calender goes here with mentor's booked appointments -->
     My appointments
     <ul>
-    <% @appointments.each do |appoint|%>
+    <% @upcoming_appointments.each do |appoint|%>
     <li><a href="/appointments/<%=appoint.id%>">
     <%= appoint.appointment_time %>
     <%= appoint.mentor_id %>
