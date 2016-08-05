@@ -66,16 +66,15 @@
 <div class="book_new_appointment">
   <!-- button/link to calender populated with open appointments-  :"/appointments" -->
 </div>
-<% elsif current_user.role == "admin" %>
-<div class="list_all_users">
-
-</div>
-<div class="list_all_appointments">
-
-</div>
-<div class="list_all_reviews">
-
-</div>
 <% else %>
-something strange is happening
+Logged in As Admin
+  <div class="list_all_users">
+
+  </div>
+  <div class="list_all_appointments">
+
+  </div>
+  <div class="list_all_reviews">
+
+  </div>
 <% end %>
