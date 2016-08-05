@@ -2,8 +2,6 @@ class UsersController < ApplicationController
 
   def index
     @appointments = Appointment.all
-    p "****"
-    p @appointments
   end
 
   def new
@@ -26,7 +24,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @appointments = Appointment.where("mentor_id = ? OR student_id = ?", @user.id, @user.id)
-    @past_appointments = Appointment.where("appointment_time < ?", Time.now)
+    @users = User.all
+    @reviews = Review.all
+    @all_appointments = Appointment.all
+    @upcoming_appointments = @appointments.where("appointment_time > ?", Time.now)
+    @past_appointments = @appointments.where("appointment_time < ?", Time.now)
   end
 
   private
