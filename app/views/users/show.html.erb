@@ -126,4 +126,52 @@
 </div>
 <% else %>
 something strange is happening
+=======
+<span><%= @user.username %></span>  | <span><%= @user.role %></span>
+<br><br>
+<% if current_user.role == "Student" || "Mentor"%>
+  <div class="calender">
+    <!-- calender goes here with mentor's booked appointments -->
+    My upcoming appointments:
+    <ul>
+    <% @upcoming_appointments.each do |appoint|%>
+    <li><a href="/appointments/<%=appoint.id%>">
+    <%= appoint.appointment_time.strftime('%m/%d %H:%M') %>
+    <% mentor = User.find(appoint.mentor_id) %>
+    <%= mentor.username %>
+      <% if appoint.student_id %>
+      <% student = User.find(appoint.student_id) %>
+        <%= student.username %></a></li>
+      <% end %>
+    <% end %></ul>
+  </div>
+  <div class="past_appointments_list">
+    <!-- list of all past appointments without reviews -->
+    My past appointments:
+    <ul>
+    <% @past_appointments.each do |appoint|%>
+    <li><a href="/appointments/<%=appoint.id%>">
+    <%= appoint.appointment_time %>
+    <%= appoint.mentor_id %>
+    <%= User.find(appoint.mentor_id).username %></a>
+      <%= form_tag "/reviews/new", method: "get" do %>
+        <%= submit_tag ("Leave a Review") %>
+      <% end %>
+    </li>
+    <% end %></ul>
+
+
+
+  </div>
+  <div class="book_new_appointment">
+    <!-- button/link to calender populated with open appointments-  :"/appointments" -->
+  </div>
+<% else current_user.role == "admin" %>
+  Logged in As Admin
+  <div class="list_all_users">
+  </div>
+  <div class="list_all_appointments">
+  </div>
+  <div class="list_all_reviews">
+  </div>
 <% end %>
