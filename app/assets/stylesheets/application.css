@@ -62,4 +62,19 @@
   margin: auto;
   width: 20%;
 }
+.mentor-on-calendar{
+  margin-top: 5px;
+}
+.student-sign-up {
+  margin: auto;
+  width: 20%;
+
+}
+.student-message {
+  border-radius: 8px;
+}
+
+.btn-warning {
+    margin-left: 40px;
+}
 

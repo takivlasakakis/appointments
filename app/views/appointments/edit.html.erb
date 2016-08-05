@@ -1,17 +1,16 @@
-<h1>Appointment Detail and Signup Page</h1>
-<ul>
-	<li>Date: <%= (@appointment.appointment_time).strftime("%m/%d/%Y") %></li>
-	<li>Time: <%= (@appointment.appointment_time).strftime("%I:%M%p") %></li>
-	<li>Mentor for this appointment: <%= User.find(@appointment.mentor_id).username %></li>
+<div class="student-sign-up">
+<ul class="list-group">
+	<li class="list-group-item">Date: <%= (@appointment.appointment_time).strftime("%m/%d/%Y") %></li>
+	<li class="list-group-item">Time: <%= (@appointment.appointment_time).strftime("%I:%M%p") %></li>
+	<li class="list-group-item">Mentor for this appointment: <%= User.find(@appointment.mentor_id).username %></li>
 </ul>
 
 
-<%= form_for @appointment do |f| %>
+<%= form_for @appointment, :html =>{:class => 'student-form'} do |f| %>
 
-Enter Details:<br> <%= f.text_area :message, size: "30x6" %>
+Enter Details:<br> <%= f.text_area :message,class: 'student-message', size: "30x6" %>
 <br>
 <%= f.hidden_field :student_id, :value => @user %>
-<%= f.submit "Register for Session" %>
+<%= f.submit "Register for Session", class: "btn-warning"%>
 <% end %>
-
-
+</div>
