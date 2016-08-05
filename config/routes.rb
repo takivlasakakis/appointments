@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	resources :reviews
+  post '/rate' => 'rater#create', :as => 'rate'
 resources :appointments
 	root 'users#index'
 	#User routes
@@ -19,7 +21,10 @@ resources :appointments
 	get '/appointments/new' => 'appointments#new'
 	post  '/appointments' => 'appointments#create'
 	get '/student' => 'appointments#student'
+
 	get '/appointments/:id' => 'appointments#show'
+	post '/reviews' => 'reviews#new'
+	# get '/appointments/:id' => 'appointments#show'
 	put '/appointments/:id' => 'appointments#edit'
 	get '/appointments/:id/edit' => 'appointments#edit'
 	# post '/appointments/:id/edit' => 'appointments#edit'
